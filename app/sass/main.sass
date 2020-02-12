@@ -1,0 +1,182 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "animations"
+// Critical css
+::placeholder
+  color: #7c7c7c
+input, textarea
+  outline: none
+  &:focus
+    color: #7c7c7c
+*
+  margin: 0
+  padding: 0
+button
+  @include reset-button
+body
+  min-width: 320px
+  max-width: 1920px
+  width: 100%
+  margin: 0 auto
+  position: relative
+  overflow-x: hidden
+  color: #060606
+  background-color: $white
+  font-family: 'Merriweather Sans', sans-serif
+  @include font(400,18px,24px)
+  a
+    color: #060606
+  a:hover
+    color: #DF3D3D
+  a:active
+    color: #B12C2C
+// Headers text configs
+h1,h2,h3,h4
+  font-family: 'Yeseva One',sans-serif
+h1
+  @include font(700,60px,48px)
+h2
+  @include font(700,30px,40px)
+h3
+  @include font(700,24px,40px)
+h4
+  @include font(700,20px,40px)
+img
+  max-width: 100%
+  height: auto
+.hidden
+  display: none !important
+#main,#footer
+  overflow: hidden
+#header
+  position: relative
+#main,#footer,#header
+  width: 100%
+.link-visit
+  font-family: 'Yeseva One',sans-serif
+  @include link-visit
+.link-visit:hover
+  @include link-visit-hover
+.link-visit:active
+  @include link-visit-active
+.link-more
+  color: #DF3D3D
+.link-more:hover
+  color: #FF4A4A
+.link-more:active
+  color: #A42323
+.m-btn
+  background: linear-gradient(133.46deg, #F93A3A 2.55%, #A52929 100%)
+  border-radius: 3px
+  color: #fff
+.m-btn:hover
+  background: linear-gradient(203.95deg, #F93A3A 34.39%, #A52929 228.33%), linear-gradient(133.46deg, #F93A3A 2.55%, #A52929 100%)
+.m-btn:active
+  background: linear-gradient(172.19deg, #F93A3A -259.65%, #A52929 100%)
+.btn
+  border: 1px solid #222222
+  color: #222
+  background-color: #fff
+.btn:hover
+  background: linear-gradient(204.11deg, #F93A3A 34.39%, #A52929 228.33%)
+.btn:active
+  background: linear-gradient(172.13deg, #F93A3A -259.65%, #A52929 100%)
+.subtitle
+  font-size: 32px
+.subtitle::after
+  content: ''
+  display: block
+  margin-top: 8px
+  background: linear-gradient(179.77deg, #F93A3A 2.55%, #A52929 100%)
+  width: 264px
+  height: 1px
+.title
+  font-size: 48px
+  text-transform: uppercase
+// containers
+.container
+  max-width: 1440px
+  width: 100%
+  margin: 0 auto
+  padding-left: 25px
+  padding-right: 25px
+.grid-container
+  display: grid
+  justify-content: space-between
+.flex-container
+  display: flex
+  justify-content: space-between
+.menu-item
+  font-size: 14px
+  position: relative
+  &>a
+    display: block
+    color: $white
+    padding: 11px 32px
+.menu-item:hover .submenu
+  display: block
+.submenu
+  position: absolute
+.submenu-active::after
+  content: '▼'
+  color: #fff
+  font-size: 8px
+  margin-left: 5px
+  vertical-align: middle
+  display: inline-block
+.submenu-item
+  position: relative
+  display: none
+//Header
+.disclaimer
+  background: #060606
+  opacity: 0.5
+  text-align: center
+  padding: 8px 0
+  color: #919191
+  font-size: 14px
+  a
+    color: #919191
+  a:hover
+    color: #DF3D3D
+#header
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  height: 749px
+.header-container
+  padding-top: 35px
+  padding-bottom: 35px
+.header-container.fixed-header
+  position: fixed
+.nav-menu-item>a:hover,.nav-menu-item>.submenu>a:hover
+  @include link-visit-hover
+  color: $white
+.nav-menu-item>a:active,.nav-menu-item>.submenu>a:active
+  @include link-visit-active
+  color: $white
+.header-submenu
+  background: #FAFAFA
+  box-shadow: 0px 24px 42px rgba(0, 0, 0, 0.16)
+  min-width: 170px
+.header-submenu>.header-submenu-item a:hover
+  @include link-visit-hover
+  color: #fff
+.header-submenu>.header-submenu-item:hover  a.submenu-active::after
+  color: #fff
+.header-submenu-item
+  height: 100%
+  a.submenu-active::after
+    color: #424242
+    transform: rotate(-90deg)
+  a
+    color: #424242
+    padding: 20px 14px
+    display: block
+    height: 100%
+  .submenu
+    top: 0
+    bottom: 0
+    right: -170px
+@import "media"
