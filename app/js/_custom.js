@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
         else {
             header.removeClass('active');
         }
+        if(header.hasClass('active')){
+            header.find('.logo img').attr('src','img/icons/logo-fixed.svg');
+        }else{
+            header.find('.logo img').attr('src','img/icons/logo.svg');
+        }
     });
 });
 

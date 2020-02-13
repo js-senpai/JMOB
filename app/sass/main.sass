@@ -135,21 +135,31 @@ img
   padding: 8px 0
   color: #919191
   font-size: 14px
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
   a
     color: #919191
   a:hover
     color: #DF3D3D
+.disclaimer + .header-container
+  top: 40px
 .header-container
-  padding-top: 35px
-  padding-bottom: 35px
+  padding-top: 15px
+  padding-bottom: 15px
   position: absolute
   left: 0
   right: 0
-  background: #00000069
 .header-container.fixed-header
   position: fixed
 .header-container.fixed-header.active
   top: 0
+  background: #FAFAFA
+  .nav-menu-item>a
+    color: #424242
+  .nav-menu-item>a:hover
+    color: $white
 .nav-menu-item>a:hover,.nav-menu-item>.submenu>a:hover
   @include link-visit-hover
   color: $white
@@ -193,5 +203,6 @@ img
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  height: 749px
+  &>.container
+    padding-top: 240px
 @import "media"
