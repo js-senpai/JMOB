@@ -4,6 +4,26 @@ document.addEventListener("DOMContentLoaded", function() {
         elements_selector: ".lazy"
     });
     lazyLoadInstance.update();
-
+    //hover
+    function hoverItem(item){
+       $(item).hover(function () {
+           $(this).children('.submenu').fadeIn('slow');
+       },function () {
+           $(this).children('.submenu').fadeOut('slow');
+       });
+    }
+   hoverItem('.menu-item');
+   hoverItem('.submenu-item');
+   $('.submenu').siblings('a').addClass('submenu-active');
+    //Фиксированный хедер
+    $(window).bind('scroll', function() {
+        let header = $('.header-container.fixed-header');
+        if($(window).scrollTop() > header.height()) {
+            header.addClass('active');
+        }
+        else {
+            header.removeClass('active');
+        }
+    });
 });
 
