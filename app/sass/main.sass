@@ -25,13 +25,26 @@ body
   color: #060606
   background-color: $white
   font-family: 'Merriweather Sans', sans-serif
-  @include font(400,18px,24px)
+  @include font(300,16px,24px)
   a
     color: #060606
   a:hover
     color: #DF3D3D
   a:active
     color: #B12C2C
+.form-container
+  input[type="text"],input[type="search"],input[type="number"],input[type="email"],input[type="password"]
+    background: #FAFAFA
+    border: 0px solid transparent
+    &:hover
+      background: #8BFF90
+    &:active
+      background: #44C349
+    &:focus
+      background: #44C44A
+    &:invalid
+      background: #FFC7C7
+      border: 2px solid #DF3D3D
 // Headers text configs
 h1,h2,h3,h4
   font-family: 'Yeseva One',sans-serif
@@ -55,7 +68,12 @@ img
 #main,#footer,#header
   width: 100%
 .link-visit
+  width: 190px
+  height: 60px
+  line-height: 60px
+  margin: 0 auto
   font-family: 'Yeseva One',sans-serif
+  text-transform: uppercase
   @include link-visit
 .link-visit:hover
   @include link-visit-hover
@@ -63,10 +81,13 @@ img
   @include link-visit-active
 .link-more
   color: #DF3D3D
+  text-decoration: underline
 .link-more:hover
   color: #FF4A4A
+  text-decoration: underline
 .link-more:active
   color: #A42323
+  text-decoration: underline
 .m-btn
   background: linear-gradient(133.46deg, #F93A3A 2.55%, #A52929 100%)
   border-radius: 3px
@@ -85,6 +106,8 @@ img
   background: linear-gradient(172.13deg, #F93A3A -259.65%, #A52929 100%)
 .subtitle
   font-size: 32px
+  font-weight: normal
+  margin: 16px 0
 .subtitle::after
   content: ''
   display: block
@@ -95,6 +118,37 @@ img
 .title
   font-size: 48px
   text-transform: uppercase
+  font-weight: normal
+  margin: 17px 0
+.close-btn
+  cursor: pointer
+  position: relative
+  display: block
+  width: 20px
+  height: 20px
+  .close-btn-dec
+    background: #424242
+    border-radius: 1px
+    display: block
+    height: 1px
+    width: 13px
+    position: absolute
+    top: 10px
+    left: 4px
+  .close-btn-dec:first-child
+    transform: rotate(45deg)
+  .close-btn-dec:last-child
+    transform: rotate(-45deg)
+.breadcrumbs-item
+  font-size: 13px
+  a
+    color: $white
+//Review
+.reviews-item
+  font-size: 15px
+  color: #b1adad
+.reviews-item.fas
+  color: #FFAC30
 // containers
 .container
   max-width: 1440px
@@ -151,11 +205,14 @@ img
   position: absolute
   left: 0
   right: 0
+  &>.flex-container
+    align-items: center
 .header-container.fixed-header
   position: fixed
 .header-container.fixed-header.active
   top: 0
   background: #FAFAFA
+  z-index: 2
   .nav-menu-item>a
     color: #424242
   .nav-menu-item>a:hover
@@ -198,11 +255,78 @@ img
   margin-left: 10px
 .nav-menu
   align-items: center
+.search-form-container
+  display: none
+  background: #FAFAFA
+  box-shadow: 0px 16px 42px rgba(0, 0, 0, 0.16)
+  padding: 24px
+  &>.flex-container
+    align-items: center
+  .close-search-form
+    margin-left: 16px
+  .search-form-input-container
+    max-height: 32px
+    align-items: center
+    border-bottom: 1px solid #BFBFBF
+    margin-right: 25px
+    .fa-search
+      font-size: 12px
+      margin-right: 15px
+    .fa-search,.search-form-input,search-form-input::placeholder
+      color: #BFBFBF
+    input.search-form-input,input.search-form-input:focus
+      border: 0px solid transparent
+      margin-bottom: 0
+      box-shadow: none
+.search-submit
+  width: 120px
+  height: 32px
+  line-height: 32px
 // Main
+//Main-banner
 .main-banner
   background-size: cover
   background-repeat: no-repeat
   background-position: center
+  color: $white
+  max-height: 713px
   &>.container
     padding-top: 240px
+.main-banner-text
+  max-width: 572px
+  font-weight: 300
+  margin-bottom: 40px
+//Main gallery
+.main-banner-gallery
+  justify-content: center
+  z-index: 1
+.main-gallery-item
+  cursor: pointer
+  margin: 8px
+  padding: 5px
+  width: 219px
+  background: #FFFFFF
+  box-shadow: 3px 10px 42px rgba(0, 0, 0, 0.1)
+  border-radius: 1px
+  transition: all 1s ease-in-out
+.main-gallery-item:hover
+  transform: scale(1.2)
+.main-gallery-name
+  margin: 15px 0 20px 0
+  text-align: center
+.main-gallery-reviews
+  margin-bottom: 18px
+  color: #424242
+  justify-content: center
+.review-count
+  margin-right: 10px
+.main-banner-visit
+  display: block
+.main-banner-more
+  text-align: center
+  padding: 20px 0
+  display: block
+//How do
+.howdo
+  margin-top: 370px
 @import "media"

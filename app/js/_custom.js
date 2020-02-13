@@ -30,5 +30,28 @@ document.addEventListener("DOMContentLoaded", function() {
             header.find('.logo img').attr('src','img/icons/logo.svg');
         }
     });
+    //Toggle Search
+    $('.btn-search').click(function () {
+        $(this).fadeOut(1);
+        $('.nav-menu-list').fadeOut(1);
+        $('.search-form-container').fadeIn(1);
+    });
+    $('.close-search-form').click(function () {
+        $('.search-form-container').fadeOut(1);
+        $('.nav-menu-list').fadeIn(1);
+        $('.btn-search').fadeIn(1);
+    });
+    // Установка звёзд
+    $('.reviews-list').each(function(){
+        let colStar = $(this).attr('data-reviews');
+        console.log(colStar);
+        if(colStar != 0 && colStar <= 5){
+            let currentItems = $(this).find('.reviews-item');
+            for(let i = 0;i<colStar;i++){
+                currentItems[i].classList.remove('far');
+                currentItems[i].classList.add('fas');
+            }
+        }
+    });
 });
 
