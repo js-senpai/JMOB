@@ -53,5 +53,14 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+    //Benefits slider
+    $('.benefits-slider').slick({
+        lazyLoad: 'progressive',
+        slideToShow: 2,
+        slidesToScroll: 2,
+        variableWidth: true,
+        prevArrow: '<span class="fas fa-chevron-left btn slider-btn-left"></span>',
+        nextArrow: '<span class="fas fa-chevron-right btn slider-btn-right"></span>'
+    })
 });
 

@@ -100,9 +100,16 @@ img
   border: 1px solid #222222
   color: #222
   background-color: #fff
+  text-align: center
+  width: 60px
+  height: 60px
+  line-height: 60px
+  font-size: 19px
 .btn:hover
+  color: $white
   background: linear-gradient(204.11deg, #F93A3A 34.39%, #A52929 228.33%)
 .btn:active
+  color: $white
   background: linear-gradient(172.13deg, #F93A3A -259.65%, #A52929 100%)
 .subtitle
   font-size: 32px
@@ -283,6 +290,9 @@ img
   height: 32px
   line-height: 32px
 // Main
+main
+  .subtitle
+    color: #DF3D3D
 //Main-banner
 .main-banner
   background-size: cover
@@ -329,4 +339,135 @@ img
 //How do
 .howdo
   margin-top: 370px
+.howdo-item
+  width: 50%
+//Top Dating
+.top-dating
+  margin-top: 190px
+  margin-bottom: 190px
+.top-dating-title,.top-dating-subtitle
+  text-align: center
+.subtitle.top-dating-title
+  font-size: 48px
+  color: #000
+.top-dating-title::after
+  margin: 0 auto
+  margin-top: 20px
+.red-word
+  color: #DF3D3D
+.top-dating-subtitle
+  font-family: 'Merriweather Sans'
+  font-size: 16px
+  font-weight: 300
+  margin-bottom: 48px
+.top-dating-table
+  width: 90%
+  margin: 0 auto
+  display: table
+  box-shadow: 0px 4.19794px 60.8701px #E2E8EE
+.top-dating-table-row
+  display: table-row
+  text-align: center
+.top-dating-table-column
+  display: table-cell
+.top-dating-table-header
+  padding: 0 27px
+  background: #F1F2F4
+  border-radius: 1px
+  font-size: 12px
+  .top-dating-table-column
+    padding: 14px 0
+.top-dating-table-row:not(.top-dating-table-header)
+  padding: 0 35px
+  cursor: pointer
+  background: #fff
+  transition: all 1s ease-in-out
+  .top-dating-table-column
+    padding: 24px 0
+    border-top: 1px solid #F1F2F4
+    border-bottom: 1px solid #F1F2F4
+    height: 100%
+    position: relative
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      width: 1px
+      height: 79px
+      top: 15%
+      background-color: #F2F2F2
+    &>.flex-container
+      align-items: center
+      justify-content: center
+.top-dating-table-row:not(.top-dating-table-header):hover
+  transform: scale(1.1)
+  box-shadow: 0px 4.19794px 60.8701px #E2E8EE
+.top-dating-count
+  display: block
+  border-radius: 50%
+  margin: 0 auto
+  width: 20px
+  height: 20px
+  background: #222222
+  font-size: 11px
+  line-height: 20px
+  text-align: center
+  color: $white
+.top-dating-rating
+  font-family: 'Yeseva One'
+  font-size: 48px
+//Benefits
+.benefits-item:first-of-type
+  width: 45%
+.benefits-item
+  width: 55%
+.benefits-slider-item
+  width: 294px
+  background: #FFFFFF
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1)
+  margin-right: 24px
+  cursor: pointer
+  transition: all 1s ease-in-out
+.benefits-slider-item:hover
+  transform: scale(1.1)
+.benefits-slider-container
+  padding: 17px 20px
+.benefits-slider-breadcrumbs-item:first-of-type
+  border: 0.6px solid #424242
+.benefits-slider-breadcrumbs-item
+  height: 22px
+  text-transform: uppercase
+  padding: 0 5px
+  position: relative
+  a
+    display: block
+    font-size: 10px
+    color: #424242
+.benefits-slider-breadcrumbs-item:not(:last-of-type)::after
+  content: ''
+  display: block
+  width: 17px
+  height: 1px
+  transform: rotate(-63.43deg)
+  background-color: #424242
+  position: absolute
+  top: 10px
+  right: -18px
+.benefits-title
+  margin-top: 10px
+  color: #424242
+  font-size: 22px
+.benefits-title::after
+  content: ''
+  display: block
+  width: 100%
+  height: 1px
+  background: #424242
+  margin-top: 5px
+.benefits-text
+  font-size: 14px
+  margin-bottom: 16px
+.benefits-more
+  font-size: 12px
+  color: #424242
 @import "media"
