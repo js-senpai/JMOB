@@ -81,6 +81,17 @@ document.addEventListener("DOMContentLoaded", function() {
         prevArrow: '<span class="fas fa-chevron-left btn slider-btn-left"></span>',
         slidesToShow:   2,
         slidesToScroll: 1
-    })
+    });
+    //Fixed table
+    $('.table-fixed-hidden').click(function(){
+        $('.table-fixed').addClass('active');
+    });
+    $('.table-fixed-toggle .close-btn').click(function(){
+        $('.table-fixed').removeClass('active');
+    });
+    //Cookie bar
+    $('.close-cookie-bar,.close-cookie-bar').click(function () {
+       $('.cookie-bar').addClass('hidden');
+    });
 });
 

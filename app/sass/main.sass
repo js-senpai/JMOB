@@ -916,4 +916,80 @@ ul.sidebar-content-list
     img
       height: 100%
       max-width: 400px
+//Table fixed
+.table-fixed
+  position: fixed
+  left: 0
+  bottom: 35%
+.table-fixed:not(.active)
+  width: 67px
+  .sidebar-content-list
+    display: none
+  .sidebar-header
+    height: auto
+    line-height: 15px
+    padding: 8px
+.table-fixed.active
+  .table-fixed-toggle
+    background: #060606
+  div.table-fixed-hidden
+    display: none
+  .close-btn-dec
+    display: block
+    top: 12px
+    left: 5px
+    background: #fff
+.table-fixed-btns-container
+  position: relative
+.table-fixed-toggle
+  display: block
+  width: 24px
+  height: 24px
+  border-radius: 50%
+  position: absolute
+  top: -12px
+  right: -12px
+  cursor: pointer
+  .close-btn-dec
+    display: none
+  .close-btn,.table-fixed-hidden
+    width: 100%
+    height: 100%
+.table-fixed-toggle:not(.active)
+  .table-fixed-hidden
+    display: block
+    background: center/50% no-repeat url('../img/icons/open-bar.svg')
+//Bar
+.cookie-bar
+  padding-top: 20px
+  padding-bottom: 20px
+  background: #DF3D3D
+  color: $white
+  position: fixed
+  bottom: 0
+  width: 100%
+  &>.flex-container
+    align-items: center
+.cookie-bar-item
+  width: 50%
+.cookie-bar-item:first-of-type
+  span
+    display: block
+.cookie-bar-item:last-of-type
+  justify-content: center
+  align-items: center
+  span
+    cursor: pointer
+  .close-cookie-bar
+    text-decoration: underline
+    color: $white
+    margin-right: 67px
+  .cookie-bar-accept
+    width: 160px
+    height: 50px
+    border: 2px solid #F4F4F4
+    line-height: 50px
+    text-align: center
+    font-family: 'Yeseva One',sans-serif
+    text-transform: uppercase
 @import "media"
