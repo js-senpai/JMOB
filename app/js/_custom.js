@@ -74,5 +74,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     //Tabs
     $('.faq-list').collapsible();
+    // More articles-slider
+    $('.more-articles-slider').slick({
+        infinite: true,
+        nextArrow: '<span class="fas fa-chevron-right btn slider-btn-right"></span>',
+        prevArrow: '<span class="fas fa-chevron-left btn slider-btn-left"></span>',
+        slidesToShow:   2,
+        slidesToScroll: 1
+    })
 });
 
