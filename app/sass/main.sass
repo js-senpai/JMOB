@@ -32,6 +32,14 @@ body
     color: #DF3D3D
   a:active
     color: #B12C2C
+  blockquote
+    margin-left: auto
+    margin-right: auto
+    padding: 13px 20px
+    font-style: italic
+    border-left: 5px solid #F93A3A
+    background-color: #FAFAFA
+    max-width: 662px
 .form-container
   input[type="text"],input[type="search"],input[type="number"],input[type="email"],input[type="password"]
     background: #FAFAFA
@@ -115,12 +123,13 @@ img
   font-size: 32px
   font-weight: normal
   margin: 16px 0
+  width: max-content
 .subtitle::after
   content: ''
   display: block
   margin-top: 8px
   background: linear-gradient(179.77deg, #F93A3A 2.55%, #A52929 100%)
-  width: 264px
+  width: 100%
   height: 1px
 .title
   font-size: 48px
@@ -147,7 +156,7 @@ img
   .close-btn-dec:last-child
     transform: rotate(-45deg)
 ul.breadcrumbs
-  padding-top: 240px
+  padding-top: 135px
   justify-content: flex-start
 .breadcrumbs-item
   font-size: 13px
@@ -164,7 +173,7 @@ ul.breadcrumbs
 .reviews-item.fas
   color: #FFAC30
 // containers
-.container,ul.breadcrumbs
+.container,ul.breadcrumbs,.review-page-container
   max-width: 1084px
   width: 100%
   margin: 0 auto
@@ -540,13 +549,14 @@ main
     margin-bottom: 88px
 .landing-content
   border-top: 1px solid #E2E4E6
-  padding: 88px 0
+  padding-top: 88px
+  padding-bottom: 88px
   h2:first-of-type
     margin-top: 0
     font-size: 35px
   h2
     width: max-content
-  h2,img,p
+  h2,img,p,blockqoute
     margin-bottom: 33px
   p,.landing-review-container
     max-width: 757px
@@ -563,7 +573,7 @@ main
     height: 1px
   h3
     font-size: 40px
-    margin-bottom: 4px
+    margin-bottom: 30px
   &>a
     padding-bottom: 30px
     display: inline-block
@@ -595,4 +605,184 @@ main
 .bad-review
   li::before
     background: center/cover no-repeat url('../img/icons/bad-review.svg')
+//Review page
+.review-banner
+  max-height: 720px
+  padding-bottom: 30px
+.review-banner-top
+  margin-top: 50px
+  margin-bottom: 50px
+  align-items: center
+.review-banner-img
+  max-width: 356px
+.review-banner-item:nth-of-type(2)
+  text-align: center
+.review-banner-item
+  .link-more
+    color: $white
+    &:hover
+      color: #FF4A4A
+    &:active
+      color: #A42323
+.review-main-count
+  font-size: 48px
+  font-family: 'Yeseva One'
+  text-align: center
+  position: relative
+  max-width: 69px
+.review-main-count::after,.review-main-count::before
+  content: ''
+  display: block
+  position: absolute
+  width: 27px
+  height: 76px
+  top: -30px
+.review-main-count::after
+  background: center/100% no-repeat url('../img/icons/review-item-white.svg')
+  right: -35px
+.review-main-count::before
+  background: center/100% no-repeat url('../img/icons/review-item-white.svg')
+  left: -35px
+  transform: scaleX(-1)
+.review-banner-middle,.review-banner-bottom
+  max-width: 626px
+  margin-left: auto
+  margin-right: auto
+.review-banner-middle
+  margin-bottom: 30px
+.review-banner-item-middle
+  width: 45%
+  .review-banner-item-count
+    font-weight: bold
+    font-size: 18px
+.review-banner-item-title
+  font-size: 18px
+.review-banner-item-progress
+  width: 52px
+  height: 5px
+  background: rgba(255, 255, 255, 0.2)
+  margin-right: 16px
+.review-progressbar
+  height: 100%
+  background: rgba(255, 255, 255, 0.74)
+.review-banner-item-content
+  align-items: center
+.review-banner-bottom
+  .link-visit
+    width: 160px
+    height: 50px
+    display: block
+    line-height: 50px
+    margin-top: 20px
+.review-page-container
+  padding-top: 88px
+  padding-bottom: 88px
+  .landing-content
+    padding-top: 0
+    padding-bottom: 0
+    border: none
+.sidebar
+  width: 172px
+.sidebar-header
+  height: 47px
+  line-height: 47px
+  background: #060606
+  font-size: 12px
+  text-align: center
+  color: $white
+ul.sidebar-content-list
+  padding: 15px
+  background: #FAFAFA
+.sidebar-content-list-item
+  margin-bottom: 10px
+  font-size: 12px
+  position: relative
+.sidebar-content-list-item::before
+  content: ''
+  display: inline-block
+  vertical-align: middle
+  margin-right: 10px
+  width: 4px
+  height: 4px
+  background: linear-gradient(133.46deg, #F93A3A 2.55%, #A52929 100%)
+  border-radius: 3px
+.cost-list
+  max-width: 636px
+  margin-right: auto
+  margin-left: auto
+.cost-list-item
+  padding: 15px
+  border: 1px solid rgba(6, 6, 6, 0.1)
+  background-color: $white
+  width: 196px
+.cost-list-header
+  text-align: center
+  span
+    display: block
+  .price
+    font-size: 35px
+    font-family: 'Yeseva One'
+    position: relative
+    &::before
+      content: '$'
+      font-size: 16px
+      margin-right: 5px
+.cost-list-footer
+  .link-visit
+    margin-top: 24px
+    display: block
+    width: 100%
+    height: 50px
+    line-height: 50px
+.result-of-review
+  padding: 40px 20px
+  border: 2px solid #A52929
+  h3,.reviews-list
+    text-align: center
+  .reviews-list
+    margin-bottom: 25px
+  .review-main-count
+    margin: 0 auto
+    &::before,&::after
+      background-image: url("../img/icons/review-item.svg")
+  .link-visit
+    display: block
+    width: 160px
+    height: 50px
+    line-height: 50px
+    margin: 0 auto
+    margin-top: 32px
+//Simular block
+.simular-sites,.faq
+  padding-top: 76px
+  padding-bottom: 76px
+  .subtitle
+    color: #424242
+    margin-bottom: 56px
+.simular-sites
+  background: #FAFAFA
+//FAQ
+.faq-list
+  border: none
+  box-shadow: none
+  .collapsible-header
+    border-bottom: 1px solid #060606
+    position: relative
+    font-size: 22px
+    font-family: 'Yeseva One',sans-serif
+    &::after
+      content: '▼'
+      position: absolute
+      display: block
+      width: 12px
+      height: 12px
+      font-size: 13px
+      color: #000
+      top: 35%
+      right: 25px
+  .collapsible-body,.collapsible-header
+    padding-left: 0
+.faq-list-item.active
+  .collapsible-header::after
+    content: '▲'
 @import "media"

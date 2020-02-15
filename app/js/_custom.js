@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Установка звёзд
     $('.reviews-list').each(function(){
         let colStar = $(this).attr('data-reviews');
-        console.log(colStar);
         if(colStar != 0 && colStar <= 5){
             let currentItems = $(this).find('.reviews-item');
             for(let i = 0;i<colStar;i++){
@@ -61,6 +60,19 @@ document.addEventListener("DOMContentLoaded", function() {
         variableWidth: true,
         prevArrow: '<span class="fas fa-chevron-left btn slider-btn-left"></span>',
         nextArrow: '<span class="fas fa-chevron-right btn slider-btn-right"></span>'
-    })
+    });
+    //Progress Bar
+    let currentProgress = [];
+    $('.review-banner-item-progress').each(function () {
+       currentProgress.push($(this).attr('data-progress'));
+    });
+    for(let i = 0;i<currentProgress.length;i++){
+        let currentProgressItem = document.querySelectorAll('.review-progressbar');
+        if(currentProgress[i] >0 &&  currentProgress[i] <= 10){
+            currentProgressItem[i].style.width = currentProgress[i].replace('.','')+'%';
+        }
+    }
+    //Tabs
+    $('.faq-list').collapsible();
 });
 
