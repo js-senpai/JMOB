@@ -319,6 +319,8 @@ main
   background-position: center
   color: $white
   max-height: 713px
+  .subtitle::after
+    width: 264px
 .main-banner-text
   max-width: 572px
   font-weight: 300
@@ -785,4 +787,15 @@ ul.sidebar-content-list
 .faq-list-item.active
   .collapsible-header::after
     content: '▲'
+//Services
+.service
+  .main-banner
+    .subtitle
+      color: $white
+      font-size: 48px
+      width: 100%
+      &::after
+        width: 100%
+  .main-banner-text
+    max-width: 100%
 @import "media"
