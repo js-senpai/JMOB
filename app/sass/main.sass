@@ -146,10 +146,17 @@ img
     transform: rotate(45deg)
   .close-btn-dec:last-child
     transform: rotate(-45deg)
+ul.breadcrumbs
+  padding-top: 240px
+  justify-content: flex-start
 .breadcrumbs-item
   font-size: 13px
   a
     color: $white
+.breadcrumbs-item:not(:last-of-type)::after
+  content: '>'
+  color: $white
+  padding: 0 5px
 //Review
 .reviews-item
   font-size: 15px
@@ -157,12 +164,15 @@ img
 .reviews-item.fas
   color: #FFAC30
 // containers
-.container
-  max-width: 1440px
+.container,ul.breadcrumbs
+  max-width: 1084px
   width: 100%
   margin: 0 auto
   padding-left: 25px
   padding-right: 25px
+.landing
+  .container
+    max-width: 954px
 .grid-container
   display: grid
   justify-content: space-between
@@ -300,8 +310,6 @@ main
   background-position: center
   color: $white
   max-height: 713px
-  &>.container
-    padding-top: 240px
 .main-banner-text
   max-width: 572px
   font-weight: 300
@@ -337,7 +345,7 @@ main
   padding: 20px 0
   display: block
 //How do
-.howdo
+.howdo,.info-landing
   margin-top: 370px
 .howdo-item
   width: 50%
@@ -424,9 +432,9 @@ main
     bottom: 25px
     z-index: 1
   .slider-btn-left
-    left: 28%
+    left: 29%
   .slider-btn-right
-    left: 38%
+    left: 40%
   .slick-track
     height: 550px
     padding: 20px 0
@@ -434,8 +442,9 @@ main
     opacity: 0.40
 .benefits-item:first-of-type
   width: 32%
+  margin-left: 15%
 .benefits-item
-  width: 60%
+  width: 53%
 .benefits-slider-item
   width: 294px
   height: 422px
@@ -522,4 +531,68 @@ main
 .copyright
   color: #424242
   text-align: right
+//Info landing
+.info-landing
+  p:nth-of-type(2n+2)
+    margin-top: 40px
+.landing
+  .top-dating
+    margin-bottom: 88px
+.landing-content
+  border-top: 1px solid #E2E4E6
+  padding: 88px 0
+  h2:first-of-type
+    margin-top: 0
+    font-size: 35px
+  h2
+    width: max-content
+  h2,img,p
+    margin-bottom: 33px
+  p,.landing-review-container
+    max-width: 757px
+    margin-left: auto
+    margin-right: auto
+  h2,h3,h4
+    font-weight: normal
+  h2::after
+    content: ''
+    display: block
+    margin-top: 8px
+    background: linear-gradient(179.77deg, #F93A3A 2.55%, #A52929 100%)
+    width: 100%
+    height: 1px
+  h3
+    font-size: 40px
+    margin-bottom: 4px
+  &>a
+    padding-bottom: 30px
+    display: inline-block
+  p
+    a
+      font-weight: bold
+      text-decoration: underline
+  h4
+    margin-bottom: 19px
+.landing-review-item
+  width: 40%
+  li
+    margin-bottom: 10px
+    position: relative
+    justify-content: flex-start
+    align-items: center
+    span
+      width: 90%
+.good-review,.bad-review
+  li::before
+    content: ''
+    display: block
+    width: 16px
+    height: 16px
+    margin-right: 15px
+.good-review
+  li::before
+    background: center/cover no-repeat url('../img/icons/good-review.svg')
+.bad-review
+  li::before
+    background: center/cover no-repeat url('../img/icons/bad-review.svg')
 @import "media"
