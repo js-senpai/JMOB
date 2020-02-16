@@ -12,8 +12,16 @@ document.addEventListener("DOMContentLoaded", function() {
            $(this).children('.submenu').fadeOut('slow');
        });
     }
-   hoverItem('.menu-item');
-   hoverItem('.submenu-item');
+   if($(window).width>1045){
+       hoverItem('.menu-item');
+       hoverItem('.submenu-item');
+   }
+   $(window).resize(function () {
+       if($(window).width>1045){
+           hoverItem('.menu-item');
+           hoverItem('.submenu-item');
+       }
+   });
    $('.submenu').siblings('a').addClass('submenu-active');
     //Фиксированный хедер
     $(window).bind('scroll', function() {
@@ -58,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
         slideToShow: 2,
         slidesToScroll: 2,
         variableWidth: true,
-        prevArrow: '<span class="fas fa-chevron-left btn slider-btn-left"></span>',
-        nextArrow: '<span class="fas fa-chevron-right btn slider-btn-right"></span>'
+        prevArrow: '<span class="btn slider-btn-left"></span>',
+        nextArrow: '<span class="btn slider-btn-right"></span>'
     });
     //Progress Bar
     let currentProgress = [];
@@ -77,8 +85,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // More articles-slider
     $('.more-articles-slider').slick({
         infinite: true,
-        nextArrow: '<span class="fas fa-chevron-right btn slider-btn-right"></span>',
-        prevArrow: '<span class="fas fa-chevron-left btn slider-btn-left"></span>',
+        nextArrow: '<span class="btn slider-btn-right"></span>',
+        prevArrow: '<span class="btn slider-btn-left"></span>',
         slidesToShow:   2,
         slidesToScroll: 1
     });
@@ -93,5 +101,15 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.close-cookie-bar,.close-cookie-bar').click(function () {
        $('.cookie-bar').addClass('hidden');
     });
+    //Toggle-menu
+    $('.toggle-menu').click(function () {
+        $(this).toggleClass('active');
+        $('.header-container').toggleClass('active-nav');
+    });
+    $('.submenu-active').after('<span class="toggle-submenu">&#9660;</span>');
+    $('.toggle-submenu').click(function () {
+        $(this).toggleClass('active');
+        $(this).next('.submenu').fadeToggle('slow');
+    })
 });
 

@@ -73,7 +73,7 @@ img
   overflow: hidden
 #header
   position: relative
-  z-index: 1
+  z-index: 2
 #main,#footer,#header
   width: 100%
 .link-visit
@@ -107,19 +107,17 @@ img
   background: linear-gradient(172.19deg, #F93A3A -259.65%, #A52929 100%)
 .btn
   border: 1px solid #222222
-  color: #222
-  background-color: #fff
-  text-align: center
   width: 60px
   height: 60px
-  line-height: 60px
-  font-size: 19px
+  background: #fff center/20% no-repeat url('../img/icons/left-button.svg')
 .btn:hover
   color: $white
-  background: linear-gradient(204.11deg, #F93A3A 34.39%, #A52929 228.33%)
+  background:  center/20% no-repeat url('../img/icons/left-button-white.svg'),linear-gradient(204.11deg, #F93A3A 34.39%, #A52929 228.33%)
 .btn:active
   color: $white
-  background: linear-gradient(172.13deg, #F93A3A -259.65%, #A52929 100%)
+  background: center/20% no-repeat url('../img/icons/left-button-white.svg'),linear-gradient(172.13deg, #F93A3A -259.65%, #A52929 100%)
+.toggle-submenu
+  display: none
 .subtitle
   font-size: 32px
   font-weight: normal
@@ -309,6 +307,22 @@ ul.breadcrumbs
   width: 120px
   height: 32px
   line-height: 32px
+.toggle-menu
+  display: none
+  width: 28px
+  height: 21px
+  @include reset-button
+  .close-btn-dec
+    display: none
+.toggle-menu,.toggle-menu:hover,.toggle-menu:focus
+  background: transparent center/cover no-repeat url('../img/icons/button-menu.svg')
+.toggle-menu.active
+  background: transparent
+  .close-btn-dec
+    display: block
+    background: #fff
+    height: 2px
+    width: 20px
 // Main
 main
   .subtitle
@@ -439,9 +453,11 @@ main
 //Benefits
 .benefits-slider
   position: relative
+  .benefits-slider-item
+    max-height: 450px
   .btn
     position: absolute
-    bottom: 25px
+    bottom: 0
     z-index: 1
   .slider-btn-left
     left: 29%
@@ -833,14 +849,20 @@ ul.sidebar-content-list
 .load-more
   margin: 50px auto
   display: block
+  transform: rotate(-90deg)
+  position: relative
   &::after
     content: 'Load More'
     font-size: 14px
     font-weight: 300
     display: block
-    margin-left: -35px
+    position: absolute
+    color: #000
+    bottom: 10px
+    left: -70px
     width: 95px
     text-transform: initial
+    transform: rotate(90deg)
 .load-more:hover::after
   color: #424242
 //More Articles
@@ -887,6 +909,7 @@ ul.sidebar-content-list
   left: 43%
 .slider-btn-right
   right: 43%
+  transform: rotate(180deg)
 //Simular Articles
 .simular-articles-v1
   display: flex

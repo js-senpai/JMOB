@@ -9,6 +9,87 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1190px)
   /**/
+@media only screen and (max-width: 1045px)
+  //Header
+  .toggle-menu
+    display: block
+  .btn-search,.nav-menu-list
+    display: none
+  .header-container.active-nav,.header-container.fixed-header.active-nav
+    top: 0
+    bottom: 0
+    background: rgba(6, 6, 6, 0.9)
+    backdrop-filter: blur(13px)
+    &>.container
+      position: relative
+    .nav-menu-item
+      a
+        padding-left: 0
+        padding-right: 0
+    .header-submenu-item,.nav-menu-item
+      border-bottom: 1px solid  rgba(255, 255, 255, 0.08)
+    .nav-menu
+      position: absolute
+      top: 35px
+      width: 100%
+      left: 0
+      flex-direction: column
+    .search-form-container
+      order: -1
+      background: none
+      width: 100%
+      .fa-search
+        display: none
+      &>.flex-container
+        align-items: flex-end
+      .search-form-input-container
+        width: 85%
+      .search-submit
+        width: 160px
+        height: 50px
+      .close-search-form
+        display: none
+    .nav-menu-list,.search-form-container
+      display: block
+    .nav-menu-list
+      width: 100%
+      padding-right: 32px
+      padding-left: 32px
+    .submenu-active::after
+      display: none
+  .toggle-submenu
+    display: block
+    width: 10%
+    color: $white
+    text-align: center
+    padding-right: 25px
+    height: 100%
+    vertical-align: middle
+    font-size: 12px
+    transition: all 1s ease-in-out
+  .toggle-submenu.active
+    transform: rotate(-180deg)
+  .menu-item
+    a
+      color: #fff !important
+    a:hover,a:active
+      color: #DF3D3D !important
+      background: transparent
+    .submenu-active
+      width: 90%
+  .submenu-item,.menu-item
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    a
+      padding-top: 10px
+      padding-bottom: 10px
+  .submenu-item
+    padding-left: 2%
+  .header-submenu
+    position: static
+    width: 100%
+    background: transparent
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 990px)
   /**/
