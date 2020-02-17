@@ -20,6 +20,7 @@
     bottom: 0
     background: rgba(6, 6, 6, 0.9)
     backdrop-filter: blur(13px)
+    overflow: scroll
     &>.container
       position: relative
     .nav-menu-item
@@ -38,6 +39,7 @@
       order: -1
       background: none
       width: 100%
+      margin-top: 20px
       .fa-search
         display: none
       &>.flex-container
@@ -120,8 +122,16 @@
 @media (max-width: 480px)
   /**/
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px)
-  /**/
+@media only screen and (max-width : 375px)
+  .header-container.fixed-header.active-nav,.header-container.active-nav
+    .search-form-container>.flex-container
+      flex-wrap: wrap
+      .search-form-input-container
+        margin-right: 0
+      .search-form-input,button.search-submit,.search-form-input-container
+        width: 100%
+      .search-submit
+        margin-top: 15px
 
 /*==========  Mobile First  ==========*/
 
