@@ -187,6 +187,8 @@ ul.breadcrumbs
 .flex-container
   display: flex
   justify-content: space-between
+.arrows-container
+  justify-content: center
 .menu-item
   font-size: 14px
   position: relative
@@ -375,6 +377,8 @@ main
   margin-top: 370px
 .howdo-item
   width: 50%
+.howdo-img
+  display: none
 //Top Dating
 .top-dating
   margin-top: 190px
@@ -450,24 +454,21 @@ main
 .top-dating-rating
   font-family: 'Yeseva One'
   font-size: 48px
+.table-dating-more,.table-dating-count
+  display: none
 //Benefits
 .benefits-slider
   position: relative
-  .benefits-slider-item
-    max-height: 450px
   .btn
     position: absolute
     bottom: 0
     z-index: 1
-  .slider-btn-left
-    left: 29%
-  .slider-btn-right
-    left: 40%
   .slick-track
-    height: 550px
     padding: 20px 0
   .benefits-slider-item[aria-hidden="true"]:nth-of-type(2n+2)
     opacity: 0.40
+  .benefits-slider-img img
+    width: 100%
 .benefits-item:first-of-type
   width: 32%
   margin-left: 15%
@@ -495,7 +496,7 @@ main
   text-transform: uppercase
   padding: 0 5px
   position: relative
-  margin-right: 10px
+  margin-right: 9px
   a
     display: block
     font-size: 10px
@@ -550,9 +551,11 @@ main
 .footer-submenu-item
   padding: 0 20px
   .submenu
-    padding: 0 30px
+    padding: 0 10px
 .footer-bottom
   margin-top: 50px
+.footer-bottom-item
+  width: 50%
 .social-menu-item
   width: 40px
   height: 40px
@@ -906,9 +909,9 @@ ul.sidebar-content-list
       height: 100%
       position: relative
 .slider-btn-left
-  left: 43%
+  margin-right: 5px
 .slider-btn-right
-  right: 43%
+  margin-left: 5px
   transform: rotate(180deg)
 //Simular Articles
 .simular-articles-v1

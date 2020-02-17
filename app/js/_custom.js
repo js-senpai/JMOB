@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
            $(this).children('.submenu').fadeOut('slow');
        });
     }
-   if($(window).width>1045){
+   if($(window).width()>1045){
        hoverItem('.menu-item');
        hoverItem('.submenu-item');
    }
    $(window).resize(function () {
-       if($(window).width>1045){
+       if($(window).width()>1045){
            hoverItem('.menu-item');
            hoverItem('.submenu-item');
        }
@@ -67,7 +67,29 @@ document.addEventListener("DOMContentLoaded", function() {
         slidesToScroll: 2,
         variableWidth: true,
         prevArrow: '<span class="btn slider-btn-left"></span>',
-        nextArrow: '<span class="btn slider-btn-right"></span>'
+        nextArrow: '<span class="btn slider-btn-right"></span>',
+        appendArrows: '.arrows-container',
+        responsive: [
+            {
+                breakpoint: 900,
+                settings:{
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    centerMode: true,
+
+                }
+            },
+            {
+                breakpoint: 680,
+                settings:{
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    centerMode: false,
+                    variableWidth: false
+
+                }
+            }
+        ]
     });
     //Progress Bar
     let currentProgress = [];
@@ -88,7 +110,8 @@ document.addEventListener("DOMContentLoaded", function() {
         nextArrow: '<span class="btn slider-btn-right"></span>',
         prevArrow: '<span class="btn slider-btn-left"></span>',
         slidesToShow:   2,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        appendArrows: '.arrows-container'
     });
     //Fixed table
     $('.table-fixed-hidden').click(function(){

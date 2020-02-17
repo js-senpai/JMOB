@@ -64,7 +64,7 @@
     width: 10%
     color: $white
     text-align: center
-    padding-right: 25px
+    padding-right: 2%
     height: 100%
     vertical-align: middle
     font-size: 12px
@@ -86,7 +86,9 @@
     a
       padding-top: 10px
       padding-bottom: 10px
-  .submenu-item
+  .submenu-active::after
+    display: none
+  ul.submenu
     padding-left: 2%
   .header-submenu
     position: static
@@ -94,13 +96,89 @@
     background: transparent
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 990px)
-  /**/
+  //Other settings
+  .container
+    padding-left: 16px
+    padding-right: 16px
+  .submenu
+    width: 100%
+  // Main Gallery
+  .main-gallery-item
+    margin: 3px
+  //Dating table
+  .top-dating-table
+    width: 100%
+  //Benefits
+  .benefits-item:first-of-type
+    margin-left: 2%
+    width: 52%
+  .benefits-item:last-of-type
+    margin-right: 2%
+    width: 44%
+  .benefits-slider-item:not(.slick-current)
+    visibility: hidden
+  //Footer
+  .footer-menu
+    grid-template-columns: repeat(1,1fr)
 /* Small Devices, Tablets */
 @media only screen and (max-width : 800px)
   /**/
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 774px)
-  /**/
+  //Other options
+  .subtitle
+    width: 100%
+  .howdo, .info-landing
+    margin-top: 750px
+  //Main banner
+  .main-banner .subtitle::after
+    width: 100%
+  .main-banner-gallery
+    flex-wrap: wrap
+  .main-banner-text
+    max-width: 100%
+  //Howdo
+  .howdo
+    flex-wrap: wrap
+  //Table dating
+  .top-dating-table-header,.top-dating-table-column:nth-of-type(3),.top-dating-table-column:nth-of-type(5)
+    display: none
+  .top-dating-table,.top-dating-table-column
+    display: block
+  .top-dating-table-row:not(.top-dating-table-header)
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: 0 15px
+    .top-dating-table-column:last-of-type
+      width: 100%
+      padding-top: 18px
+      .link-visit
+        width: 100%
+    .top-dating-table-column:nth-of-type(4) .flex-container
+      flex-wrap: wrap
+      justify-content: flex-start
+    .top-dating-table-column:not(:last-of-type)
+      padding-bottom: 0
+  .top-dating-table-column:first-of-type
+    width: 10%
+  .top-dating-table-column:nth-of-type(2)
+    width: 40%
+  .top-dating-table-column:nth-of-type(4)
+    width: 40%
+  .top-dating-table .top-dating-table-row .top-dating-table-column
+    border: none
+  .top-dating-table .top-dating-table-row .top-dating-table-column::after,.top-dating-table .top-dating-table-row .top-dating-table-column::before
+    display: none
+  .table-dating-more,.table-dating-count
+    display: block
+  .table-dating-more
+    width: 100%
+    font-size: 12px
+    text-align: left
+  .table-dating-count
+    font-size: 14px
+    margin-right: 9px
 @media  only screen and (max-width: 680px)
   .notfound-wrapper
     width: 100%
@@ -118,9 +196,50 @@
     width: 100%
     margin-right: 0
     margin-bottom: 10px
+  //Howdo
+  .howdo-item
+    width: 100%
+  .howdo-item:last-of-type
+    display: none
+  .howdo-img
+    display: block
+  //Benefits
+  .benefits
+    flex-wrap: wrap
+    padding-left: 16px
+    padding-right: 16px
+  .benefits-item:first-of-type,.benefits-item:last-of-type
+    width: 100%
+    margin-right: 0
+    margin-left: 0
+  .benefits-slider-item
+    margin-right: 0
+  //Footer
+  .footer-menu-container,.footer-bottom
+    flex-wrap: wrap
+  .footer-bottom
+    justify-content: center
+    text-align: center
+    .copyright
+      text-align: center
+  .footer-menu-items,.footer-bottom-item
+    width: 100%
+  .footer-bottom-item
+    margin-bottom: 40px
 /* Extra Small Devices, Phones */
-@media (max-width: 480px)
-  /**/
+@media (max-width: 483px)
+  //Other options
+  .reviews-item
+    font-size: 11px
+  //Main banner
+  .howdo, .info-landing
+    margin-top: 2330px
+  .main-gallery-item
+    width: 100%
+    margin:  0 0 16px 0
+  .main-gallery-img
+    img
+      width: 100%
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 375px)
   .header-container.fixed-header.active-nav,.header-container.active-nav
