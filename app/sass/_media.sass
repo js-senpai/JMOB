@@ -180,6 +180,8 @@
     font-size: 14px
     margin-right: 9px
 @media  only screen and (max-width: 680px)
+  .subtitle
+    font-size: 32px
   .notfound-wrapper
     width: 100%
     padding-right: 15px
@@ -196,6 +198,9 @@
     width: 100%
     margin-right: 0
     margin-bottom: 10px
+  // Top dating
+  .subtitle.top-dating-title
+    font-size: 32px
   //Howdo
   .howdo-item
     width: 100%
@@ -232,13 +237,27 @@
   .reviews-item
     font-size: 11px
   //Main banner
-  .howdo, .info-landing
-    margin-top: 2330px
+  .main-banner
+    max-height: 100%
+    background-size: 100%
+    background-position: top center
+  .info-landing,.howdo
+    margin-top: 0
   .main-gallery-item
     width: 100%
     margin:  0 0 16px 0
   .main-gallery-img
     img
+      width: 100%
+  //Landing review
+  .landing-review-container
+    flex-wrap: wrap
+  .good-review,.bad-review
+    width: 100%
+  .landing-content
+    h1,h2
+      font-size: 35px
+      text-align: left
       width: 100%
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 375px)

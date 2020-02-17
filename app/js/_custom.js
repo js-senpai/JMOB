@@ -133,6 +133,14 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.toggle-submenu').click(function () {
         $(this).toggleClass('active');
         $(this).next('.submenu').fadeToggle('slow');
-    })
+    });
+    if($(window).width() <= 483){
+        let mobileImg = $('.main-banner').attr('data-mobile-img');
+        $('.landing .main-banner,.main-page .main-banner').attr('data-bg',mobileImg);
+    }
+    $(window).resize(function () {
+        let mobileImg = $('.main-banner').attr('data-mobile-img');
+        $('.landing .main-banner,.main-page .main-banner').attr('data-bg',mobileImg);
+    });
 });
 
