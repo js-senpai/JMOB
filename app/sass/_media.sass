@@ -1,8 +1,4 @@
 @import "vars"
-@media (min-width: 376px) and (max-width : 774px)
-  .not-found
-    .review-banner
-      background-image: url('../img/_src/notfound/tab-img.jpg') !important
 /*==========  Desktop First  ==========*/
 @media screen and (max-width: 1150px)
   /**/
@@ -13,6 +9,8 @@
   //Header
   .toggle-menu
     display: block
+  .header-container.fixed-header.active
+    background: #000000d9
   .btn-search,.nav-menu-list
     display: none
   .header-container.active-nav,.header-container.fixed-header.active-nav
@@ -115,8 +113,9 @@
   .benefits-item:last-of-type
     margin-right: 2%
     width: 44%
-  .benefits-slider-item:not(.slick-current)
-    visibility: hidden
+  .benefits-slider
+    .benefits-slider-item:not(.slick-current)
+      visibility: hidden
   //Footer
   .footer-menu
     grid-template-columns: repeat(1,1fr)
@@ -135,8 +134,58 @@
     margin: 0 auto
   .review-banner-item
     width: 100%
-  .sidebar
+  .sidebar:not(.table-fixed)
     display: none
+  //Table of content
+  .table-fixed:not(.active)
+    .sidebar-header
+      display: none
+  .table-fixed-toggle
+    width: 48px
+    height: 48px
+    top: auto
+    right: auto
+    bottom: -25px
+    left: -25px
+  .table-fixed.active
+    .close-btn-dec
+      width: 50%
+      left: 25%
+      top: 45%
+  .table-fixed
+    bottom: 15%
+    left: 40px
+  //Category Page
+  .category-post-v2,.category-post-v1,.simular-articles-v2,.simular-articles-v1
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    .benefits-slider-item
+      width: calc(100%/2.1)
+      margin-bottom: 2%
+    .benefits-slider-item:nth-of-type(1n+1)
+      margin-right: 2%
+  .simular-articles-v2,.simular-articles-v1
+    .simular-slider-img
+      display: block
+      width: 30%
+      margin-right: 5%
+      img
+        width: 100%
+    .benefits-slider-breadcrumbs
+      width: 65%
+      flex-wrap: wrap
+    .benefits-slider-container
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    .benefits-slider-img
+      display: none
+    .benefits-title
+      margin-top: 7px
+    .benefits-title,.benefits-text
+      width: 100%
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 800px)
   /**/
@@ -201,7 +250,7 @@
     flex-wrap: wrap
   .review-banner-item-middle,.cost-list-item
     width: 100%
-  .main-banner.review-banner
+  .main-banner.review-banner:not(.not-found-banner)
     max-height: 100%
     .link-visit
       width: 100%
@@ -253,6 +302,9 @@
     margin-left: 0
   .benefits-slider-item
     margin-right: 0
+  .more-articles-slider-item
+    margin-left: 0
+    margin-right: 0
   //Footer
   .footer-menu-container,.footer-bottom
     flex-wrap: wrap
@@ -265,6 +317,22 @@
     width: 100%
   .footer-bottom-item
     margin-bottom: 40px
+  //Cookie bar
+  .cookie-bar-item:last-of-type
+    flex-wrap: wrap
+    span
+      width: 100%
+      text-align: center
+    .close-cookie-bar
+      margin-right: 0
+    .cookie-bar-accept
+      order: -1
+      margin-bottom: 20px
+  //Category page
+  .category-post-v2,.category-post-v1,.simular-articles-v2,.simular-articles-v1
+    .benefits-slider-item
+      margin-right: 0
+      width: 100%
 /* Extra Small Devices, Phones */
 @media (max-width: 483px)
   //Other options
@@ -296,6 +364,9 @@
   .landing
     .top-dating-title
       color: #F93A3A
+  //Not found
+  .notfound-banner
+    background-size: 100% 100%
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 375px)
   .header-container.fixed-header.active-nav,.header-container.active-nav

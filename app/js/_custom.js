@@ -111,7 +111,15 @@ document.addEventListener("DOMContentLoaded", function() {
         prevArrow: '<span class="btn slider-btn-left"></span>',
         slidesToShow:   2,
         slidesToScroll: 1,
-        appendArrows: '.arrows-container'
+        appendArrows: '.arrows-container',
+        responsive:[
+            {
+                breakpoint: 680,
+                settings:{
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
     //Fixed table
     $('.table-fixed-hidden').click(function(){
@@ -136,11 +144,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     if($(window).width() <= 483){
         let mobileImg = $('.main-banner').attr('data-mobile-img');
-        $('.landing .main-banner,.main-page .main-banner').attr('data-bg',mobileImg);
+        $('.main-banner').attr('data-bg',mobileImg);
     }
     $(window).resize(function () {
         let mobileImg = $('.main-banner').attr('data-mobile-img');
-        $('.landing .main-banner,.main-page .main-banner').attr('data-bg',mobileImg);
+        $('.main-banner').attr('data-bg',mobileImg);
     });
 });
 

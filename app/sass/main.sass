@@ -467,8 +467,8 @@ main
     padding: 20px 0
   .benefits-slider-item[aria-hidden="true"]:nth-of-type(2n+2)
     opacity: 0.40
-  .benefits-slider-img img
-    width: 100%
+.benefits-slider-img img
+  width: 100%
 .benefits-item:first-of-type
   width: 32%
   margin-left: 15%
@@ -945,6 +945,8 @@ ul.sidebar-content-list
     justify-content: flex-start
     img
       height: 100%
+.simular-slider-img
+  display: none
 //Table fixed
 .table-fixed
   position: fixed
@@ -955,9 +957,10 @@ ul.sidebar-content-list
   .sidebar-content-list
     display: none
   .sidebar-header
-    height: auto
-    line-height: 15px
-    padding: 8px
+    h4
+      height: auto
+      line-height: 15px
+      padding: 8px
 .table-fixed.active
   .table-fixed-toggle
     background: #060606
