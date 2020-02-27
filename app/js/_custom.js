@@ -129,9 +129,16 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.table-fixed').removeClass('active');
     });
     //Cookie bar
-    $('.close-cookie-bar,.close-cookie-bar').click(function () {
-       $('.cookie-bar').addClass('hidden');
+    $('.close-cookie-bar').click(function () {
+        $('.cookie-bar').addClass('hidden');
     });
+    $('.cookie-bar-accept').click(function () {
+        $('.cookie-bar').addClass('hidden');
+        localStorage.cookiebar = 'hidden';
+    });
+    if(localStorage.cookiebar == 'hidden'){
+        $('.cookie-bar').addClass('hidden');
+    }
     //Toggle-menu
     $('.toggle-menu').click(function () {
         $(this).toggleClass('active');
