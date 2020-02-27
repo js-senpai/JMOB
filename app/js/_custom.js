@@ -151,11 +151,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     if($(window).width() <= 483){
         let mobileImg = $('.main-banner').attr('data-mobile-img');
-        $('.main-banner').attr('data-bg',mobileImg);
+        $('.main-banner').css({'background-image':mobileImg});
+    }else{
+        let fullImg = $('.main-banner').attr('data-bg');
+        $('.main-banner').css({'background-image':fullImg });
     }
     $(window).resize(function () {
-        let mobileImg = $('.main-banner').attr('data-mobile-img');
-        $('.main-banner').attr('data-bg',mobileImg);
+        if($(window).width() <= 483){
+            let mobileImg = $('.main-banner').attr('data-mobile-img');
+            $('.main-banner').css({'background-image':mobileImg});
+        }else{
+            let fullImg = $('.main-banner').attr('data-bg');
+            $('.main-banner').css({'background-image':fullImg });
+        }
     });
 });
 

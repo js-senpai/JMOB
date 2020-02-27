@@ -165,6 +165,18 @@
       margin-bottom: 2%
     .benefits-slider-item:nth-of-type(1n+1)
       margin-right: 2%
+  .category-post-v1
+    .benefits-slider-item
+      flex-wrap: wrap
+      box-shadow: 0 4px 40px rgba(0,0,0,.1)
+    .benefits-slider-img
+      width: 100%
+      img
+        width: 100%
+        height: auto
+  .category-post-v2,.category-post-v1
+    .benefits-more
+      width: 100%
   .simular-articles-v2,.simular-articles-v1
     .simular-slider-img
       display: block
@@ -331,7 +343,10 @@
   //Category page
   .category-post-v2,.category-post-v1,.simular-articles-v2,.simular-articles-v1
     .benefits-slider-item
-      margin-right: 0
+      margin-right: 0 !important
+      width: 100%
+  .category-post-v1
+    .benefits-slider-container
       width: 100%
 /* Extra Small Devices, Phones */
 @media (max-width: 483px)
