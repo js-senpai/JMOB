@@ -52,11 +52,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Установка звёзд
     $('.reviews-list').each(function(){
         let colStar = $(this).attr('data-reviews');
-        if(colStar != 0 && colStar <= 5){
+        let Regx = RegExp(/[.|,]\w/g);
+        let findStar = Regx.test(colStar);
+        let currentStar = colStar.replace(/[.|,]\w/g,'');
+        console.log(findStar);
+        if(currentStar != 0 && currentStar <= 5){
             let currentItems = $(this).find('.reviews-item');
-            for(let i = 0;i<colStar;i++){
+            for(let i = 0;i<currentStar;i++){
                 currentItems[i].classList.remove('far');
                 currentItems[i].classList.add('fas');
+                if(currentStar-1==i&&findStar){
+                    currentItems[i].classList.remove('fa-star');
+                    currentItems[i].classList.add('fa-star-half-alt');
+                }
             }
         }
     });
@@ -99,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for(let i = 0;i<currentProgress.length;i++){
         let currentProgressItem = document.querySelectorAll('.review-progressbar');
         if(currentProgress[i] >0 &&  currentProgress[i] <= 10){
-            currentProgressItem[i].style.width = currentProgress[i].replace('.','')+'%';
+            currentProgressItem[i].style.width = currentProgress[i].replace(/[.|,]/g,'')+'%';
         }
     }
     //Tabs
