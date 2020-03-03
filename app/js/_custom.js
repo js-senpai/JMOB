@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //hover
     function hoverItem(item){
        $(item).hover(function () {
-           $(this).children('.submenu').fadeIn('slow');
+           $(this).children('.submenu:not(.footer-submenu)').fadeIn('slow');
        },function () {
-           $(this).children('.submenu').fadeOut('slow');
+           $(this).children('.submenu:not(.footer-submenu)').fadeOut('slow');
        });
     }
    if($(window).width()>1045){
@@ -102,12 +102,12 @@ document.addEventListener("DOMContentLoaded", function() {
     //Progress Bar
     let currentProgress = [];
     $('.review-banner-item-progress').each(function () {
-       currentProgress.push($(this).attr('data-progress'));
+        currentProgress.push($(this).attr('data-progress'));
     });
     for(let i = 0;i<currentProgress.length;i++){
         let currentProgressItem = document.querySelectorAll('.review-progressbar');
         if(currentProgress[i] >0 &&  currentProgress[i] <= 10){
-            currentProgressItem[i].style.width = currentProgress[i].replace(/[.|,]/g,'')+'%';
+            currentProgressItem[i].style.width = currentProgress[i].replace('.','')+'%';
         }
     }
     //Tabs

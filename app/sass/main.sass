@@ -118,6 +118,17 @@ img
   background: center/20% no-repeat url('../img/icons/left-button-white.svg'),linear-gradient(172.13deg, #F93A3A -259.65%, #A52929 100%)
 .toggle-submenu
   display: none
+  width: 10%
+  color: $white
+  cursor: pointer
+  text-align: center
+  padding-right: 2%
+  height: 100%
+  vertical-align: middle
+  font-size: 12px
+  transition: all 1s ease-in-out
+.toggle-submenu.active
+  transform: rotate(-180deg)
 .subtitle
   font-size: 32px
   font-weight: normal
@@ -239,12 +250,8 @@ ul.breadcrumbs
   position: fixed
 .header-container.fixed-header.active
   top: 0
-  background: #FAFAFA
+  background: #000000d9
   z-index: 2
-  .nav-menu-item>a
-    color: #424242
-  .nav-menu-item>a:hover
-    color: $white
 .nav-menu-item>a:hover,.nav-menu-item>.submenu>a:hover
   @include link-visit-hover
   color: $white
@@ -536,10 +543,23 @@ main
   margin-top: 88px
   padding-top: 48px
   padding-bottom: 48px
+  .toggle-submenu
+    display: block
+    margin-left: 5px
+  .submenu-active::after
+    content: ''
+    display: none
+  .footer-menu-item,.submenu-item
+    display: flex
+    flex-wrap: wrap
 .footer-menu-container
   justify-content: flex-start
 .footer-menu-items
   width: 50%
+.footer-menu-item
+  &>a
+    padding-top: 0
+    padding-right: 0
 .footer-menu-item-title
   color: $white
   font-weight: normal
@@ -1003,6 +1023,7 @@ ul.sidebar-content-list
   position: fixed
   bottom: 0
   width: 100%
+  z-index: 4
   &>.flex-container
     align-items: center
 .cookie-bar-item
@@ -1044,6 +1065,7 @@ ul.sidebar-content-list
   display: flex
   justify-content: center
   align-items: center
+  z-index: 3
   .subtitle
     font-size: 48px
     color: $white
